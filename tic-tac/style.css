@@ -1,0 +1,119 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --orange: #f7f4f4;
+    --winning-blocks: #babbbd;
+}
+
+body {
+   
+    color: var(--orange);
+    font-family: 'Finger Paint', cursive;
+}
+h1 {
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.container {
+   
+    padding: 40px;
+    height: 100vh;
+    display: flex;
+   
+    align-items: center;
+    flex-direction: column;
+    background-color: #37505C;
+}
+
+#gameboard {
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+.box {
+    height: 100px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--orange);
+    font-size: 120px;
+    border-right: 2px solid;
+    border-bottom: 2px solid;
+}
+.box:nth-child(3n) {
+    border-right: none;
+}
+.box:nth-child(6) ~ .box {
+    border-bottom: none;
+} 
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: var(--orange);
+    color: #333;
+    border-color: var(--orange);
+    font-size: 18px;
+    transition: 200ms transform;
+    font-weight: 600;
+}
+button:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+}
+
+#gameover {
+    color: #37505C;;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+#gameover #text {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#gameover.show {
+    display: flex;
+}
+.welcome {
+   margin-top: 200px;
+   display: flex;
+    flex-direction: column;
+    height: 50vh;
+    width: 100vw;
+    align-items: center;
+   gap: 1rem;
+    color: #37505C;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.hide{
+    display: none !important;
+}
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+  }
